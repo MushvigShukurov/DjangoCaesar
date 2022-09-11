@@ -1,0 +1,16 @@
+a{
+    text-decoration: none;
+    color: inherit;
+}
+a:hover{
+    color: #EF5B0C;
+}
+
+.navbar-custom{
+    background: #0F3460;
+    color: #fff;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+}

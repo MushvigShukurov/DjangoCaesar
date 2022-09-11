@@ -1,0 +1,57 @@
+{% extends 'layout.html' %}
+
+
+{% block title %}
+Mushvigsh | Ana sehife
+{% endblock title %}
+
+
+{% block body %}
+
+    <h1 class="display-4 text-center">Mətn Şifrələmə</h1>
+
+    <form class="row" method="post">
+      {% csrf_token %}
+      <div class="form-group col-5">
+        <label for="exampleFormControlTextarea1">Şifrələmək istədiyiniz mətni daxil edin</label>
+        <textarea class="form-control" name="sifrelenecekMetn" id="exampleFormControlTextarea1" rows="10" style="resize: none;">{{text}}</textarea>
+      </div>
+      <div class="col-2 d-flex justify-content-center align-items-center">
+        <button type="submit" class="btn btn-outline-primary"><i class="fa-solid fa-play"></i></button>
+      </div>
+      <div class="form-group col-5">
+        <label for="exampleFormControlTextarea2">Şifrələnmiş mətn</label>
+        <textarea class="form-control" disabled id="exampleFormControlTextarea2" rows="10" style="resize: none;">{{crypt}}</textarea>
+      </div>
+    </form>
+
+    <br><br><br>
+
+   
+
+  <div class="navbar-custom py-4 px-1">
+    <h1 class="display-4 text-center">Mətn DeŞifrələmə</h1>
+
+    <form class="row" method="post">
+      {% csrf_token %}
+      <div class="form-group col-5">
+        <label for="exampleFormControlTextarea1">Şifrələmək istədiyiniz mətni daxil edin</label>
+        <textarea class="form-control" name="sifreliMetnname" id="exampleFormControlTextarea1" rows="10" style="resize: none;">{{sifreliMetn}}</textarea>
+      </div>
+      <div class="col-2 d-flex justify-content-center align-items-center">
+        <button type="submit" name="des" class="btn btn-outline-primary"><i class="fa-solid fa-play"></i></button>
+      </div>
+      <div class="form-group col-5">
+        <label for="exampleFormControlTextarea2">Şifrələnmiş mətn</label>
+        <textarea class="form-control" disabled id="exampleFormControlTextarea2" rows="10" style="resize: none;">{{metn}}</textarea>
+      </div>
+    </form>
+  </div>
+{% endblock body %}
+
+
+{% block year %}
+
+<strong>{{time}}</strong>
+
+{% endblock year %}

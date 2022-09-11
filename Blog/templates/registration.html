@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+  Mushvigsh | Qeydiyyat Sehifesi
+{% endblock %}
+
+{% block body %}
+  <div class="py-4 px-1 my-4" style="max-width: 500px;margin:auto;">
+    <h1 class="text-center display-4 mb-4">Qeydiyyat formu</h1>
+    <form method="post">
+      {% csrf_token %}
+        <div class="form-group">
+          <label for="username">Istifadəçi adı</label>
+          <input type="text" autocomplete="off" class="form-control" id="username" placeholder="İstifadə adınız" name="username" value="{{ username }}">
+        </div>
+        <div class="form-group">
+          <label for="userpassword">Parolunuz</label>
+          <input type="password" class="form-control" id="userpassword" placeholder="Parolunuz" name="password">
+        </div>
+        <div class="form-group">
+            <label for="userrepassword">Təkrar Parolunuz</label>
+            <input type="password" class="form-control" id="userrepassword" placeholder="Parolunuzun təkrarı" name="repassword">
+          </div>
+        <div class="my-2">
+            <a href="{% url 'login' %}">Hesabınız var ?</a>
+        </div>
+        {% comment %} <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div> {% endcomment %}
+        <button type="submit" class="btn btn-primary">Təsdiqlə</button>
+      </form>
+  </div>
+{% endblock %}
+
+
+{% block year %}
+<strong>{{time}}</strong>
+{% endblock year %}

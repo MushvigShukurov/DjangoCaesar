@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+{% block title %}Mushvigsh | Haqqımda{% endblock title %}
+
+
+
+{% block body %}
+
+
+<div class="container py-4 px-1">
+    <h1 class="display-4 my-4">Şükürov Müşviq</h1>
+    <hr>
+    <div class="lead">
+        {{setting.about|safe}}
+    </div>
+</div>
+
+
+{% endblock body %}
